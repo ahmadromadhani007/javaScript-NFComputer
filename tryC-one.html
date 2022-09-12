@@ -1,0 +1,43 @@
+<script Language="javascript">
+    //belajar variable, tipe data dan Percabangan
+    var pelanggan = 'Sayyidah Humairah';
+    var produk = "LP";
+    /*
+    HAPE => 3jt
+    LP => 10jt
+    PC => 20jt
+
+    */
+    //struktur kendali
+    if (produk == 'HAPE'){
+        harsat = 3000000;    
+    }
+    else if (produk == 'LP'){
+        harsat = 1000000;
+    }
+    else if(produk == 'PC'){
+        harsat = 2000000;
+    }
+    else{
+        harsat = 0;
+    }
+    let jmlBeli = 5;
+    let bruto = harsat * jmlBeli;
+    
+    //ternary
+    /*
+    
+    if(produk == "HAPE") diskon = 0.1 * bruto;
+    else diskon = 0;
+    */
+    diskon = (produk == "HAPE") ? 0.1 * bruto : 0;
+    //cetak
+    document.write("Data Pembelian" +
+    "<br/>Pelanggan : " + pelanggan +
+    "<br/>Produk Pilihan : " + produk +
+    "<br/>Harga Satuan : " + harsat +
+    "<br/>Harga Kotor : " + bruto + 
+    "<br/>Diskon : " + diskon 
+    );
+    
+</script>

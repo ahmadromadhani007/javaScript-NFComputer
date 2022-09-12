@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUGAS1_JS</title>
+</head>
+
+<body>
+
+  <table border="1" cellspacing="0" cellpadding="10">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Jabatan</th>
+        <th>Status</th>
+        <th>Gaji Pokok</th>
+        <th>Tunjangan</th>
+        <th>BPJS</th>
+        <th>Tunjangan Keluarga</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script lang="javascript">
+    const table = document.getElementsByTagName('tbody');
+
+    const data = [
+      {
+        nama: 'Ridwann',
+        jabatan: 'Manager',
+        status: 'Menikah',
+      },
+      {
+        nama: 'Ahmad',
+        jabatan: 'Asisten Manager',
+        status: 'Belum Menikah',
+      },
+      {
+        nama: 'Romadhani',
+        jabatan: 'Staff',
+        status: 'Menikah',
+      },
+    ]
+
+
+    data.forEach((item) => {
+      const row = document.createElement('tr');
+      const gaji = item.jabatan == 'Asisten Manager' ? 10000000 : item.jabatan == 'Staff' ? 5000000 : 15000000;
+      const tunjangan = gaji * (15 / 100);
+      const bpjs = gaji * (10 / 100);
+      const tKluarga = item.status == 'Menikah' ? gaji * (20 / 100) : 0;
+      const total = gaji + tunjangan + tKluarga + bpjs;
+      row.innerHTML = `
+    <td>${item.nama}</td>
+    <td>${item.jabatan}</td>
+    <td>${item.status}</td>
+    <td>Rp ${numberWithCommas(gaji)},-</td>
+    <td>Rp ${numberWithCommas(tunjangan)},-</td>
+    <td>Rp ${numberWithCommas(bpjs)},-</td>
+    <td>Rp ${numberWithCommas(tKluarga)},-</td>
+    <td>Rp ${numberWithCommas(total)},-</td>
+  `;
+      table[0].appendChild(row);
+    });
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+  </script>
+</body>
+
+</html>

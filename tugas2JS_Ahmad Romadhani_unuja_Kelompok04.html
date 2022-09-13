@@ -1,0 +1,53 @@
+<!-- 
+    /*
+    Diketahui ada 100 orang pegawai dengan nama pegawai1 s/d 100:
+    Gunakan If multi kondisi untuk menentukan jabatan
+    pegawai1 s/d Pegawai 25 jabatan manager, gapok 15 jt
+    pegawai26 s/d Pegawai 50 jabatan Asistenmanager, gapok 10 jt
+    pegawai51 s/d Pegawai 75 jabatan superVisior, gapok 7jt
+    pegawai76 s/d Pegawai 100 jabatan staff, gapok 4jt
+    untuk gapok gunakan switch case
+    
+    Dari gapok tentukan:
+    - tunjangan jabatan = 20 % dari gapok
+    - tunjangan kesehatan = 10 % dari gapok
+    - Gaji kotor = Gapok + Tunjangan kesehatan
+    Gunakan ternary untuk menentukan agama Muslim dan Non muslim
+    baris ganjil Muslim, warna barisnya kuning
+    baris genap Non-muslim warna barisnya biru
+    jika pegawai muslim dan gaji kotornya minimal 7jt, ada zakat profesi sebesar 2,5% dari gaji kotornya  
+    
+    Take home pay = Gaji kotor - Zakat Profesi
+    Tugas:
+    Cetak data pegawai dan data terkait berbentuk table:
+    
+    Format pengumpulan tugas :
+    Disimpan di githubnya masing2:
+    contoh:
+    buat repo baru (javascript) -> file tugas di pull di repo tsb
+    lalu link nya dalam txt assign ke LMS
+    */
+-->
+<h3 align="center">Daftar Mahasiswa</h3>
+    <table align="center" cellpadding="'10" width="40%">
+        <thead>
+            <tr bgcolor="tomato">
+                <th>NO</th>
+                <th>NAMA</th>
+                <th>ALAMAT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script Language="javascript">
+            var no, warna;
+            for(no = 1; no <= 100; no++){
+                warna = (no % 2 == 0) ? 'yellow' :'aqua'; 
+                document.write(`<tr bgcolor="${warna}">
+                <td>${no}</td>
+                <td>Mahasiswa${no}</td>
+                <td>Jln.Bunga No.${no}</td>
+            </tr>`);
+            }
+            </script>
+        </tbody>
+    </table>

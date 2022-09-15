@@ -1,0 +1,16 @@
+<script Language = "javascript">
+    //array of object
+    let m1 = {name:"Budi", nilai:95};
+    let m2 = {name:"Bedu", nilai:85};
+    let m3 = {name:"Dedi", nilai:75};
+    let m4 = {name:"Dudi", nilai:65};
+    let m5 = {name:"Dude", nilai:55};
+
+    let mahasiswa = [m1, m2, m3, m4, m5];
+
+    for (m of mahasiswa) {
+        let ket = (m.nilai >= 60) ? "Lulus" : "Gagal";    
+        document.write(`<br/>Nama : ${m.name} = Nilai: ${m.nilai} - Keterangan : ${ket}`);
+    }
+
+</script>

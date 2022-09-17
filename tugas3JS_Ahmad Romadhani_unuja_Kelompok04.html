@@ -31,15 +31,15 @@
         <script language="javascript">
         let no = 1;
         for (m of mahasiswa) {
-          //set kelulusan
+          //set jika kelulusan
             let ket = m.nilai >= 60 ? "Lulus" : "Gagal";
-          //set grade A - E (if multi kondisi)
+          //set grade A - E  menggunkan (if multi kondisi)
           // A = 85 - 100, B = 75 - < 85 dst
 
-          //set predikat ( swtich case)
+          //set predikat nya ( swtich case)
           //A = Memuaskan, B=Bagus, C=Cukup, D=kurang, E=Buruk
 
-          // set Grade
+          // set Grades
             let grade = 0;
             if (m.nilai > 85 && m.nilai < 100) {
             grade = "A";
@@ -53,7 +53,7 @@
             grade = "E";
             }
 
-          // set predikat
+          // set Predikat mahasiswa
             let predikat = "";
             switch (grade) {
             case "A":
@@ -79,7 +79,6 @@
           // set warna warni baris ganjil genap
             warna = no % 2 == 1 ? "yellow" : "aqua";
 
-          //set warna-warni baris ganjil & genap
         document.write(`<tr bgcolor="${warna}">
             <td>${no++}</td>
             <td>${m.nama}</td>

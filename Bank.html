@@ -1,0 +1,49 @@
+<script Language="javascript">
+//-------------membuatClass-------------------
+class Bank{
+    //member1 var
+    //let no = '';
+    //let nama = '';
+    //let saldo = 0;
+
+    //member2 konstruktor
+    constructor(norek, nasabah, saldo) {
+        this.no = norek;
+        this.nama = nasabah;
+        this.saldo = saldo;
+    }
+
+    //memberi fungsi
+    menabung(uang){
+        //this.saldo = this.saldo + uang;
+        this.saldo += uang;
+    }
+    menarik(uang){
+        //this.saldo = this.saldo + uang;
+        this.saldo -= uang;
+    }
+    mencetak(){
+        document.write(`Nama Nasabah:${this.nama} 
+        <br/>No.Rekening: ${this.no}
+        <br/>Saldo: ${this.saldo}
+        <hr/>
+        `);
+    }
+} 
+//-------------------membuatObject------------
+//instanceObject dengan mengisi konstruktor kelas
+neur = new Bank('001', 'Neur', 500000);
+cr7 = new Bank('007', 'ronaldo', 700000);
+leo = new Bank('030', 'Messi', 1000000);
+salah = new Bank('011', 'M.Salah', 900000);
+bape = new Bank('011', 'MBapeh', 900000);
+
+//useAttribute from class
+cr7.menabung(200000);
+salah.menabung(500000);
+
+cr7.menarik(400000);
+leo.menarik(300000);
+salah.menarik(800000);
+neur.mencetak(); cr7.mencetak(); leo.mencetak(); salah.mencetak(); bape.mencetak();
+</script>
